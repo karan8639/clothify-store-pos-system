@@ -1,0 +1,20 @@
+.login-card {
+    -fx-background-color: white;
+    /* Curving only the left side to flow with the background */
+    -fx-background-radius: 40 0 0 40;
+    -fx-border-radius: 40 0 0 40;
+
+    /* Very soft shadow for the 'Luxury' feel */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 30, 0, -10, 0);
+
+    -fx-padding: 40;
+    -fx-spacing: 15;
+}
+
+/* Minimalist Input Fields */
+.text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: #E0E0E0;
+    -fx-border-width: 0 0 1 0; /* Only bottom line */
+    -fx-prompt-text-fill: #B0B0B0;
+}

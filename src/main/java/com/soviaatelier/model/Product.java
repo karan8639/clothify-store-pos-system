@@ -1,5 +1,6 @@
 package com.soviaatelier.model;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -7,10 +8,12 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
-public class Customer {
+public class Product {
     private String id;
     private String name;
-    private String email;
-    private double totalspend;
+    private String fabricType;
+    private char size;
+    private int qtyOnHand;
+    private double unitPrice;
 
 }

@@ -1,20 +1,55 @@
 .login-card {
-    -fx-background-color: white;
-    /* Curving only the left side to flow with the background */
+    /* 1. LAYERED BACKGROUND */
+    -fx-background-image: url("brushed_metal_texture.png");
+    -fx-background-repeat: repeat;
+    -fx-background-size: cover;
+
+    /* The 'Frosted' Golden-Pink blend */
+    -fx-background-color: linear-gradient(
+        to bottom right,
+        #fce4ec, /* Light Pink start */
+        #f8cdda, /* Soft Rose middle */
+        #d4af37  /* Golden finish */
+    );
+
+    /* 2. THE CURVE */
     -fx-background-radius: 40 0 0 40;
     -fx-border-radius: 40 0 0 40;
 
-    /* Very soft shadow for the 'Luxury' feel */
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 30, 0, -10, 0);
+    /* 3. METALLIC 'BEVELED' BORDER */
+    -fx-border-color: linear-gradient(to bottom right,
+        #FFFFFF 0%,   /* Pure white highlight on the top-left edge */
+        #D4AF37 50%,  /* Gold transition */
+        #8B4513 100%  /* Darker bronze shadow on the bottom-right edge */
+    );
+    -fx-border-width: 2.0;
 
-    -fx-padding: 40;
-    -fx-spacing: 15;
+    /* 4. THE 3D GLASS EFFECT: MASSIVE GLOW + DEEP SHADOW */
+    /* We use 'chaining' by creating a layered dropshadow effect */
+    /* Layer 1: The Ambient White Glow (Atmosphere) */
+    /* Layer 2: The Deep Dark 3D Offset (Lifts it off the screen) */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 30, 0.2, 15, 15);
+
+    /* 5. SPACING */
+    -fx-padding: 50;
+}
+.img-viewer {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.5, 0, 0);
+    -fx-background-radius: 40 0 0 40;
+    -fx-padding: 10;
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #ccc;
+    -fx-border-width: 2;
+    -fx-border-radius: 40 0 0 40;
 }
 
 /* Minimalist Input Fields */
+
 .text-field {
     -fx-background-color: transparent;
-    -fx-border-color: #E0E0E0;
-    -fx-border-width: 0 0 1 0; /* Only bottom line */
-    -fx-prompt-text-fill: #B0B0B0;
+    -fx-border-color: #C0C0C0; /* Silver bottom border */
+    -fx-border-width: 0 0 1 0;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #666666;
+    -fx-font-family: "Garamond";
 }
